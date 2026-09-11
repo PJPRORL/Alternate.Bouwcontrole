@@ -1,6 +1,6 @@
 <Solution>
-  <Project Path="Alternate.Bouwcontrole/Alternate.Bouwcontrole.App.csproj">
+  <Project Path="Alternate.Bouwcontrole.App/Alternate.Bouwcontrole.App.csproj">
     <Deploy Solution="Debug|*" />
   </Project>
-  <Project Path="Bouwcontrole.Core/Alternate.Bouwcontrole.Core.csproj" />
+  <Project Path="Alternate.Bouwcontrole.Core/Alternate.Bouwcontrole.Core.csproj" />
 </Solution>

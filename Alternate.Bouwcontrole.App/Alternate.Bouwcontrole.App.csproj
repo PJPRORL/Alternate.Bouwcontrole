@@ -75,8 +75,5 @@
 	  <Folder Include="Views\" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <ProjectReference Include="..\Bouwcontrole.Core\Alternate.Bouwcontrole.Core.csproj" />
-	</ItemGroup>
 
 </Project>
