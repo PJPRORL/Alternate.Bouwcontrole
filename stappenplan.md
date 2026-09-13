@@ -1,7 +1,7 @@
 # Bouwcontrole — stappenplan
 
-Veertien fases, van een solution die niet laadt tot een werkend scherm op de
-werkvloer.
+Zestien fases, van een solution die niet laadt tot een werkend scherm op de
+werkvloer — met halverwege een demo die je kan tonen.
 
 > **Herschreven 12 september 2026** voor de gekozen ondergrond en de volgorde van
 > de leerstof. Dit document volgt `docs/projectafspraken.md`: het wijst je de weg,
@@ -21,25 +21,31 @@ verspilling: elke les vervangt iets voorlopigs door iets beters, en je begrijpt
 pas waaróm een repository nuttig is als je eerst zonder hebt gewerkt.
 
 ```
-DEEL 1 — Programming Advanced legt de grondlaag
-┌────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┐
-│ 0  │ 1  │ 2  │ 3  │ 4  │ 5  │ 6  │ 7  │ 8  │ 9  │ 10 │
-└────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┘
-  op   draait  analyse  crud  repo  db   async  model  uow  joins  dto
-                  ▲                                                  │
-          jouw werk, geen les                                        │
-                                                                     ▼
-DEEL 2 — .NET Development bouwt verder            ┌────┬────┬────┬────┐
-                                                  │ 11 │ 12 │ 13 │ 14 │
-                                                  └────┴────┴────┴────┘
-                                                  engine identity scherm rechten
+DEEL 1 — Programming Advanced legt de grondlaag én levert een werkende demo
+┌────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┐
+│ 0  │ 1  │ 2  │ 3  │ 4  │ 5  │ 6  │ 7  │ 8  │ 9  │ 10 │ 11 │
+└────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┘
+  op  draait analyse crud  repo   db  async model  uow  joins  dto  ENGINE
+                ▲                                                      │
+        jouw werk, geen les                                       ◄ demo hier
+                                                                       ▼
+DEEL 2 — .NET Development verbetert wat er staat   ┌────┬────┬────┬────┐
+                                                   │ 12 │ 13 │ 14 │ 15 │
+                                                   └────┴────┴────┴────┘
+                                                  tests identity scherm rechten
 ```
 
-Twee fases verdienen nu al aandacht. **Fase 2** staat in geen enkele cursus: het
+**Het doel van deel 1 is een werkende demo.** Aan het einde van fase 11 kan je een
+bouworder insturen en de gevonden conflicten terugkrijgen. Dat werkt echt, en het
+is te tonen aan wie de mockup moet goedkeuren. Deel 2 verbetert dan een applicatie
+die al draait, in plaats van hem alsnog af te maken.
+
+Drie fases verdienen nu al aandacht. **Fase 2** staat in geen enkele cursus: het
 is de analyse van je eigen incompatibiliteitenlijst, en zonder die analyse weet je
 niet welke velden je modellen nodig hebben. **Fase 11** is het hart van het
-project — de conflict-engine — en die staat bewust bij de les die je leert hoe je
-zoiets bouwt én test.
+project en meteen je demo. **Fase 12** zet er de tests omheen — en zal daar
+waarschijnlijk fouten uit halen. Dat is geen falen, dat is waarvoor die fase
+bestaat.
 
 ---
 
@@ -112,7 +118,7 @@ en beide bestaande projecten verdwijnen.
 
 - De solution opnieuw opzetten in de vorm hierboven: één webproject, één
   testproject, met één referentie van Tests naar het webproject. Dat gaat sneller
-  dan de bestaande paden repareren. Het testproject blijft leeg tot fase 11 — je
+  dan de bestaande paden repareren. Het testproject blijft leeg tot fase 12 — je
   zet hem nu alleen klaar zodat de vorm van je solution meteen goed staat.
 - Het MAUI-project verwijderen. Dat vak staat niet meer in je opleiding en de
   front-end wordt MVC.
@@ -330,6 +336,10 @@ wat een conflict *is*, niet hoe je hem opspoort.
 **Klaar wanneer:** je database bevat je onderdelen én je conflictregels, en je kan
 een handvol regels uit je incompatibiliteitenlijst er als data in terugvinden.
 
+> Denk bij het seeden al aan je demo in fase 11. Twee regels volstaan om te
+> bewijzen dat het werkt; ze overtuigen niemand op je werk. Zet er genoeg in dat
+> een echte bouworder er iets zinnigs uit haalt.
+
 **Valkuil:** de standaardinstelling bij het verwijderen van een record is in veel
 gevallen "verwijder alles wat eraan hangt". De les besteedt daar niet voor niets
 een waarschuwing aan. Denk na over wat er met je conflictregels gebeurt als een
@@ -416,56 +426,92 @@ gebruiken AutoMapper. Dat is een andere library met een andere syntax — en sin
 
 ---
 
+## Fase 11 — De conflict-engine, en je demo
+
+**Lees eerst:** niets nieuws. Je hebt alles wat je nodig hebt.
+
+**Waarom nu:** dit is het doel van deel 1. Alles eronder staat — modellen,
+database, conflictregels, repositories, DTO's. Wat ontbreekt is het stuk dat de
+eigenlijke vraag beantwoordt: gaan deze onderdelen samen?
+
+**Wat je doet:**
+
+1. De engine als een gewone klasse, geregistreerd zoals je in les 03 geleerd hebt.
+   Hij krijgt onderdelen en conflictregels binnen en geeft een resultaat terug.
+   Geen database erin, geen HTTP.
+2. Een endpoint dat een bouworder aanneemt en dat resultaat teruggeeft. Dit is het
+   endpoint zonder databasetabel erachter — denk na over welk verb erbij past.
+3. Genoeg seed-data zodat een echte bouworder iets zinnigs oplevert.
+
+**Twee dingen om over na te denken vóór je begint:**
+
+Het resultaat moet meer dragen dan "dit conflict vuurde". De mockup kleurt de
+regel van een ónderdeel. Vraag jezelf af wat de engine moet teruggeven opdat het
+scherm straks weet wélke regels het moet kleuren.
+
+Als een conflict twee voorwaarden heeft en er is maar één onderdeel dat aan
+allebei voldoet — vuurt het dan? Beantwoord dat vóór je de controle schrijft. De
+voor de hand liggende manier om "zijn alle voorwaarden vervuld?" op te schrijven
+geeft hier het verkeerde antwoord.
+
+**Wat je niet doet:** de engine niet in een controller schrijven, en niet in een
+repository. En laat hem niet zelf de database aanspreken, hoe verleidelijk ook —
+zodra hij dat doet, kan je hem in fase 12 niet meer testen zonder database.
+
+**Klaar wanneer:** je opent Scalar, stuurt een bouworder met een reeks
+artikelcodes in, en krijgt de juiste conflicten terug. Dit is wat je toont.
+
+**De prijs van deze keuze.** Je hebt hier nog geen testframework. Je controleert
+met de hand, via Scalar, tegen een handvol gevallen uit je lijst waarvan je het
+antwoord al kent. Dat is genoeg om te tonen, niet genoeg om zeker te zijn. Fase 12
+haalt daar waarschijnlijk fouten uit. Reken daarop en schrik er niet van.
+
+**Valkuil:** een demo die alleen werkt met de artikelcodes die jij toevallig hebt
+uitgeprobeerd. Vraag iemand anders een bouworder te kiezen voor je hem toont.
+
+---
+
 # DEEL 2 — .NET Development
 
 ---
 
-## Fase 11 — De conflict-engine, test-first
+## Fase 12 — Tests rond de engine
 
 **Lees eerst:** .NET Development les 08.
 
-**Waarom nu:** dit is het hart van Bouwcontrole, en het is meteen het enige stuk
-dat je werkelijk kan unit-testen. De les legt uit waarom: controllers en
-repositories zijn in de praktijk niet testbaar, dus businesslogica hoort in een
-Service. De conflict-engine is businesslogica in zuivere vorm — onderdelen en
-regels in, een resultaat uit. Geen database, geen HTTP.
+**Waarom nu:** je engine werkt, maar je weet alleen dat hij werkt voor de gevallen
+die je zelf geprobeerd hebt. Deze fase maakt daar zekerheid van. De les legt ook
+uit waarom juist dit stuk testbaar is: controllers zijn het slecht door hun
+returntypes, repositories test je niet omdat data verandert. Services blijven over.
 
-**Wat je doet:** het testproject dat sinds fase 0 leeg stond nu inrichten — NUnit
-en Moq erbij — en dáár eerst de tests schrijven, vóór de service. De les beschrijft die volgorde en de reden erachter: je dwingt jezelf om
-iets te ontwerpen dat testbaar is.
+**Wat je doet:** het testproject dat sinds fase 0 leeg stond inrichten — NUnit en
+Moq erbij — en tests schrijven rond de engine zoals hij er nu staat.
+
+De les beschrijft test-first: eerst de test, dan de code. Dat past hier niet meer,
+want je engine bestaat al. Pas het toe op alles wat je ná deze fase nog bouwt.
 
 De testgevallen leid je zelf af uit je incompatibiliteitenlijst. Denk aan wat er
 moet gebeuren bij een lege order, bij een regel die vuurt, bij een regel die net
 níét vuurt, bij een regel die uitgeschakeld is, en bij een onderdeel dat in
 meerdere conflicten zit.
 
-**Twee dingen om over na te denken vóór je begint:**
+**Wat je niet doet:** geen tests schrijven die je engine bevestigen in wat hij nu
+toevallig doet. Je test wat er hóórt te gebeuren, en dat leid je af uit je lijst —
+niet uit je eigen code.
 
-Het resultaat moet meer dragen dan "dit conflict vuurde". De mockup kleurt de
-regel van een ónderdeel. Vraag jezelf af wat de service moet teruggeven opdat het
-scherm weet wélke regels het moet kleuren.
+**Klaar wanneer:** je tests draaien groen, en er zit minstens één geval bij dat je
+in fase 11 niet met de hand geprobeerd had.
 
-Als een conflict twee voorwaarden heeft en er is maar één onderdeel dat aan
-allebei voldoet — vuurt het dan? Beantwoord dat vóór je de controle schrijft. De
-voor de hand liggende manier om "zijn alle voorwaarden vervuld?" op te schrijven
-geeft hier het verkeerde antwoord, en je merkt dat pas als je er een test voor
-hebt.
+**Valkuil:** vind je een fout — en de kans is groot — pas dan niet meteen je
+engine aan. Schrijf eerst de test die faalt, en herstel daarna pas. Anders weet je
+niet of je het werkelijk opgelost hebt.
 
-**Wat je niet doet:** de engine niet in een controller schrijven, en niet in een
-repository. Zodra hij iets anders nodig heeft dan zijn invoer, is hij niet meer te
-testen.
-
-**Klaar wanneer:** je tests draaien groen, en je kan een bouworder door de service
-sturen en de juiste conflicten eruit krijgen — zonder dat er een browser aan te
-pas komt.
-
-**Valkuil:** de les toont mocking van afhankelijkheden. Als je engine goed
-ontworpen is, heb je het hier nauwelijks nodig. Heb je veel mocks nodig, dan is
-dat een teken dat je service te veel weet.
+> Heb je veel mocks nodig om je engine te kunnen testen, dan is dat een teken dat
+> hij te veel weet. Dat is bruikbare informatie over je ontwerp, geen tegenslag.
 
 ---
 
-## Fase 12 — Identity, gebruikers en rollen
+## Fase 13 — Identity, gebruikers en rollen
 
 **Lees eerst:** .NET Development les 06, daarna les 07.
 
@@ -495,7 +541,7 @@ blind over — vraag het na bij je docent als je twijfelt.
 
 ---
 
-## Fase 13 — Het scherm
+## Fase 14 — Het scherm
 
 **Lees eerst:** .NET Development les 09, daarna les 10.
 
@@ -524,12 +570,12 @@ als ViewModel.
 
 ---
 
-## Fase 14 — Keuzelijsten, aanmeldschermen en rechten in de UI
+## Fase 15 — Keuzelijsten, aanmeldschermen en rechten in de UI
 
 **Lees eerst:** .NET Development les 11.
 
 **Waarom nu:** de afwerking. Het conflictbeheer heeft keuzelijsten nodig, en de
-beveiliging uit fase 12 moet ook zichtbaar zijn in het scherm.
+beveiliging uit fase 13 moet ook zichtbaar zijn in het scherm.
 
 **Wat je doet:** keuzelijsten in je formulieren, de aanmeld- en
 gebruikersbeheerschermen, en de instelling die bepaalt waar iemand belandt als hij
