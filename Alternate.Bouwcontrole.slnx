@@ -1,6 +1,4 @@
 <Solution>
-  <Project Path="Alternate.Bouwcontrole.App/Alternate.Bouwcontrole.App.csproj">
-    <Deploy Solution="Debug|*" />
-  </Project>
-  <Project Path="Alternate.Bouwcontrole.Core/Alternate.Bouwcontrole.Core.csproj" />
+  <Project Path="Alternate.Bouwcontrole.Tests/Alternate.Bouwcontrole.Tests.csproj" Id="f08f35e6-75f0-4d33-b51b-e520a49a5e35" />
+  <Project Path="Alternate.Bouwcontrole/Alternate.Bouwcontrole.csproj" Id="39942bda-8f53-4255-ad9b-95f023611436" />
 </Solution>

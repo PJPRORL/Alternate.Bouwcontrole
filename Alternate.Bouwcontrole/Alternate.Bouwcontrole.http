@@ -1,0 +1,6 @@
+@Alternate.Bouwcontrole_HostAddress = http://localhost:5079
+
+GET {{Alternate.Bouwcontrole_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
