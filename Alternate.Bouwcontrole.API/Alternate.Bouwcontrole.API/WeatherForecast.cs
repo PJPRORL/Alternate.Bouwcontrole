@@ -1,4 +1,4 @@
-namespace Alternate.Bouwcontrole
+namespace Alternate.Bouwcontrole.API
 {
     public class WeatherForecast
     {
