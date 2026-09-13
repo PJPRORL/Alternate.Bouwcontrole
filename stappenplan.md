@@ -101,17 +101,24 @@ dat de les ze introduceert. Probeer ze niet vooruit aan te maken.
 
 **Lees eerst:** niets.
 
-**Waarom nu:** je solution laadt op dit moment niet. In `Alternate.Bouwcontrole.slnx`
-wijzen beide projectpaden naar mappen die niet bestaan, en de projectreferentie in
-het app-project heeft hetzelfde probleem. Daarbovenop verandert de vorm van de
-solution, omdat de front-end MVC wordt.
+**Waarom nu:** je solution laadt op dit moment niet. Een solutionbestand is een
+tekstbestand met een lijstje van welke projecten erbij horen en waar ze staan; in
+`Alternate.Bouwcontrole.slnx` wijzen beide paden naar mappen die niet bestaan, en
+de projectreferentie in het app-project heeft dezelfde fout. Je gaat dat niet
+repareren — de vorm van de solution verandert toch, omdat de front-end MVC wordt
+en beide bestaande projecten verdwijnen.
 
 **Wat je doet:**
 
 - De solution opnieuw opzetten in de vorm hierboven: één webproject, één
-  testproject. Dat gaat sneller dan de bestaande paden repareren.
+  testproject, met één referentie van Tests naar het webproject. Dat gaat sneller
+  dan de bestaande paden repareren. Het testproject blijft leeg tot fase 11 — je
+  zet hem nu alleen klaar zodat de vorm van je solution meteen goed staat.
 - Het MAUI-project verwijderen. Dat vak staat niet meer in je opleiding en de
   front-end wordt MVC.
+- Ook het Core-project verdwijnt. De scheiding tussen de lagen zit vanaf nu in de
+  mappen van het webproject, niet in aparte projecten — dat is hoe beide cursussen
+  het doen. Er staat niets in Core dat je moet overzetten: die bestanden zijn leeg.
 - De lege placeholders weggooien. Er staat nu een abstracte klasse zonder inhoud,
   een subklasse die niet overerft van die abstracte klasse, en een bestand dat
   `IMoederbordRepository` heet maar als klasse gedeclareerd staat in plaats van als
@@ -125,9 +132,11 @@ ze nodig hebben.
 **Klaar wanneer:** de solution opent zonder fouten en er staat geen enkel bestand
 meer in dat niets doet.
 
-**Valkuil:** alleen de projectreferentie repareren en het solutionbestand
-vergeten. Dan laadt je solution nog steeds niet, en zoek je in het verkeerde
-bestand.
+**Valkuil:** de oude bestanden half laten staan. Maak je een nieuwe solution maar
+blijft het oude `.slnx` in de map liggen, dan open je vroeg of laat het verkeerde
+bestand — via je lijst met recente projecten bijvoorbeeld — en vraag je je af
+waarom er niets werkt. Gooi het oude solutionbestand en de oude projectmappen weg,
+en controleer daarna in git dat die verwijderingen ook echt opgenomen zijn.
 
 ---
 
@@ -421,8 +430,8 @@ repositories zijn in de praktijk niet testbaar, dus businesslogica hoort in een
 Service. De conflict-engine is businesslogica in zuivere vorm — onderdelen en
 regels in, een resultaat uit. Geen database, geen HTTP.
 
-**Wat je doet:** eerst het testproject opzetten en de tests schrijven, dán de
-service. De les beschrijft die volgorde en de reden erachter: je dwingt jezelf om
+**Wat je doet:** het testproject dat sinds fase 0 leeg stond nu inrichten — NUnit
+en Moq erbij — en dáár eerst de tests schrijven, vóór de service. De les beschrijft die volgorde en de reden erachter: je dwingt jezelf om
 iets te ontwerpen dat testbaar is.
 
 De testgevallen leid je zelf af uit je incompatibiliteitenlijst. Denk aan wat er
