@@ -1,0 +1,32 @@
+{
+  "Moederbord":[
+    {
+      "KrakenId":,
+      "Brand":
+    },
+    {
+      "KrakenId":,
+      "Brand":
+    }
+  ],
+  "Processor": {
+    "KrakenId":,
+    "Brand":,
+    "TDP":
+  },
+  "GrafischeKaart": {
+    "KrakenId":,
+    "Brand":,
+    "TDP":
+  },
+  "HDD": {
+    "KrakenId":,
+    "Brand":,
+    "TDP":
+  },
+  "SSD": {
+    "KrakenId":,
+    "Brand":,
+    "TDP":
+  }
+}
