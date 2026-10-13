@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Begeleidende artikels · Bouwcontrole</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+
+</head>
+<body>
+<div class="site">
+  <header class="balk">
+    <a class="merk" href="../index.html" aria-label="Bouwcontrole, naar de start">
+      <svg class="chip" viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="2"/><path d="M11 3v4M16 3v4M21 3v4M11 25v4M16 25v4M21 25v4M3 11h4M3 16h4M3 21h4M25 11h4M25 16h4M25 21h4"/><circle cx="11" cy="11" r="1.6"/></svg>
+      <span class="merk-naam">Bouwcontrole</span>
+      <span class="merk-sub">projectsite</span>
+    </a>
+    <span class="rev">REV 13·10·2026</span>
+    <button class="menu-knop" type="button" id="menu-knop" aria-expanded="false" aria-controls="zijbalk">Mappen</button>
+  </header>
+  <div class="raster">
+    <nav class="zijbalk" id="zijbalk" aria-label="Mappen"><ul class="boom"><li class="map"><a href="../index.html"><span class="ref">MB</span><span>Start</span></a></li><li class="map"><a href="../project/index.html" class="map-kop"><span class="ref">U1</span><span>Project</span></a><ul><li><a href="../project/index.html">Wat Bouwcontrole is</a></li><li><a href="../project/tijdlijn.html">Tijdlijn</a></li><li><a href="../project/afspraken.html">Afspraken</a></li></ul></li><li class="map"><a href="../techniek/index.html" class="map-kop"><span class="ref">U2</span><span>Techniek</span></a><ul><li><a href="../techniek/index.html">Ondergrond</a></li><li><a href="../techniek/stappenplan.html">Stappenplan</a></li></ul></li><li class="map open"><a href="index.html" class="map-kop"><span class="ref">U3</span><span>Analyse</span></a><ul><li><a href="index.html">Conflictregels</a></li><li><a href="onderdelen.html">Onderdeeltypes</a></li><li><a href="begeleidende-artikels.html" class="hier" aria-current="page">Begeleidende artikels</a></li></ul></li><li class="map"><a href="../alpha/index.html" class="map-kop"><span class="ref">U4</span><span>Alpha</span></a><ul><li><a href="../alpha/index.html">Waarom een alpha</a></li><li><a href="../alpha/scherm.html">Het scherm</a></li><li><a href="../alpha/sjabloon.html">Sjabloon en MVC</a></li><li><a href="../alpha/testen.html">Testen met het team</a></li></ul></li><li class="map"><a href="../leren/index.html" class="map-kop"><span class="ref">U5</span><span>Leren</span></a><ul><li><a href="../leren/index.html">Programming Advanced</a></li><li><a href="../leren/database.html">Databaseproject</a></li></ul></li><li class="map"><a href="../planning/index.html" class="map-kop"><span class="ref">U6</span><span>Planning</span></a><ul><li><a href="../planning/index.html">Tijdsinschatting</a></li><li><a href="../planning/takenlijst.html">Takenlijst</a></li></ul></li><li class="map"><a href="../bibliotheek/index.html" class="map-kop"><span class="ref">U7</span><span>Bibliotheek</span></a><ul><li><a href="../bibliotheek/index.html">Waar alles staat</a></li><li><a href="../bibliotheek/open.html">Wat nog open staat</a></li></ul></li></ul></nav>
+    <main class="inhoud">
+      
+      <nav class="kruim" aria-label="Kruimelpad"><a href="../index.html">Start</a> <span aria-hidden="true">/</span> <a href="index.html">Analyse</a> <span aria-hidden="true">/</span> <span>Begeleidende artikels</span></nav>
+      <header class="paginakop">
+        <p class="silk"><span class="ref">U3</span>Analyse</p>
+        <h1>Begeleidende artikels</h1>
+        <p class="lede">Een nieuwe soort controle uit de brainstorm van 28 september: niet wat er botst, maar wat er ontbreekt.</p>
+      </header>
+      
+<p class="citaat">Sommige artikels werken pas als een ander artikel mee in de order zit. Ontbreekt dat, dan moet Bouwcontrole het melden of tegenhouden.</p>
+
+<h2>Het geval dat het idee deed ontstaan</h2>
+<ul class="punten">
+  <li>NZXT-casefans in losse verpakking hebben geen controller bij zich.</li>
+  <li>De controller zit wel in de triple pack van hetzelfde type, of wordt apart verkocht.</li>
+  <li>Losse fans zonder aparte controller en zonder triple pack van hetzelfde type: de bouw is niet af te werken.</li>
+</ul>
+
+<h2>Waarom dit een ander soort controle is</h2>
+<div class="spec-wrap"><table class="spec "><thead><tr><th></th><th>De 43 regels</th><th>Deze regel</th></tr></thead><tbody><tr><td><b>De vraag</b></td><td>Passen twee onderdelen uit de order bij elkaar?</td><td>Zit alles in de order wat een onderdeel nodig heeft?</td></tr><tr><td><b>Vuurt op</b></td><td>iets dat er is</td><td>iets dat ontbreekt</td></tr><tr><td><b>Voorbeeld</b></td><td><code>FAN-KST-MAAT</code> fanmaat tegenover de behuizing</td><td>losse NZXT-fan zonder controller</td></tr></tbody></table></div>
+<p>Twee dingen liggen er het dichtst bij. <a href="index.html#CPU-TOT-BEELD"><code>CPU-TOT-BEELD</code></a> zoekt ook iets dat ontbreekt: een grafische kern of een videokaart. En de eigenschap "controller meegeleverd" bij casefans schakelt nu alleen <code>FAN-MB-HEADERS</code> en <code>FAN-MB-RGB</code> uit. Hier zou ze voor het eerst zelf een melding geven.</p>
+
+<h2>Wat het ontwerp nog moet beantwoorden</h2>
+<ul class="vragen">
+  <li><span class="code">B1</span><div><b>Wat is "hetzelfde type"?</b> <span>Geen enkele bestaande regel kent een productfamilie. Is dat een eigenschap, een koppeling tussen artikels, of iets anders?</span></div></li>
+  <li><span class="code">B2</span><div><b>Identificatie of eigenschap?</b> <span>Nu gaan voorwaarden over het Kraken-Id, later over eigenschappen. Bij welke hoort deze regel?</span></div></li>
+  <li><span class="code">B3</span><div><b>Welk type is een controller?</b> <span>Een casefan, een eigen type, of een toebehoren zonder type?</span></div></li>
+  <li><span class="code">B4</span><div><b>Hoe zegt een voorwaarde "dit ontbreekt"?</b> <span>Tot nu toe gaat elke voorwaarde over een onderdeel dat er is.</span></div></li>
+  <li><span class="code">B5</span><div><b>Welke ernst?</b> <span>Oranje of rood. Dat raakt de vraag of rood werkelijk blokkerend is.</span></div></li>
+  <li><span class="code">B6</span><div><b>Welke regel kleurt het scherm?</b> <span>Het ontbrekende artikel heeft geen regel om te kleuren. Kleurt de fan, of komt er een aparte melding?</span></div></li>
+</ul>
+
+<h2>Richting</h2>
+<p>Beschrijf eerst in gewone taal een paar orders die goed, fout en twijfelachtig zijn. Kijk dan of je bestaande voorwaarden ze uit elkaar kunnen houden. Waar dat niet lukt, zit het stuk dat ontbreekt.</p>
+<p>In de alpha komt deze controle als nagebootst vak <i>Ontbrekend artikel</i>, en de vijf <a href="../alpha/testen.html">testscenario's</a> draaien er rond.</p>
+
+      <p class="bron"><span>Bron</span> Brainstorm Bouwcontrole, 28 september 2026</p>
+      <nav class="buren" aria-label="Verder lezen"><a class="buur terug" href="onderdelen.html"><span class="buur-label">Vorige · U3 Analyse</span><span class="buur-titel">Onderdeeltypes</span></a><a class="buur verder" href="../alpha/index.html"><span class="buur-label">Volgende · U4 Alpha</span><span class="buur-titel">Waarom een alpha</span></a></nav>
+    </main>
+  </div>
+  <footer class="voet"><span>Bouwcontrole · leerproject van Jeroen bij Alternate</span><span>Opgesteld op 13 oktober 2026 uit de projectdocs, de repo en de brainstorm. Waar de site en een document verschillen, wint het document.</span></footer>
+</div>
+<script src="../assets/site.js"></script>
+
+</body>
+</html>

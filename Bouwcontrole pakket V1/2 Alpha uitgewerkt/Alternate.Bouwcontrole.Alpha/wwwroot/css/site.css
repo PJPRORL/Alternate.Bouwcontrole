@@ -1,0 +1,82 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+/* ---- Alpha: de CSS uit de HTML-versie in de brainstorm (stap 6) ---- */
+
+.scherm {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    "bron        scanzone"
+    "onderdelen  onderdelen"
+    "conflicten  conflicten";
+  gap: 1rem;
+  padding: 1rem;
+}
+.bron       { grid-area: bron; }
+.scanzone   { grid-area: scanzone; }
+.onderdelen { grid-area: onderdelen; }
+.conflicten { grid-area: conflicten; }
+
+/* klassen naar de ernst, niet naar de kleur */
+.ok        { border-left: 6px solid green; }
+.opmerking { border-left: 6px solid orange; }
+.nok       { border-left: 6px solid red; }
+
+/* drie velden per regel, zoals in de mockup */
+.onderdelen ul { list-style: none; padding: 0; }
+
+.regel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+.veld {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+}
+
+/* twee vakken in het conflictpaneel */
+.vakken {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.vak {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+.vak.nieuw { border-style: dashed; }

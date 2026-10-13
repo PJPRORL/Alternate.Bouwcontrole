@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sjabloon en MVC · Bouwcontrole</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+
+</head>
+<body>
+<div class="site">
+  <header class="balk">
+    <a class="merk" href="../index.html" aria-label="Bouwcontrole, naar de start">
+      <svg class="chip" viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="2"/><path d="M11 3v4M16 3v4M21 3v4M11 25v4M16 25v4M21 25v4M3 11h4M3 16h4M3 21h4M25 11h4M25 16h4M25 21h4"/><circle cx="11" cy="11" r="1.6"/></svg>
+      <span class="merk-naam">Bouwcontrole</span>
+      <span class="merk-sub">projectsite</span>
+    </a>
+    <span class="rev">REV 13·10·2026</span>
+    <button class="menu-knop" type="button" id="menu-knop" aria-expanded="false" aria-controls="zijbalk">Mappen</button>
+  </header>
+  <div class="raster">
+    <nav class="zijbalk" id="zijbalk" aria-label="Mappen"><ul class="boom"><li class="map"><a href="../index.html"><span class="ref">MB</span><span>Start</span></a></li><li class="map"><a href="../project/index.html" class="map-kop"><span class="ref">U1</span><span>Project</span></a><ul><li><a href="../project/index.html">Wat Bouwcontrole is</a></li><li><a href="../project/tijdlijn.html">Tijdlijn</a></li><li><a href="../project/afspraken.html">Afspraken</a></li></ul></li><li class="map"><a href="../techniek/index.html" class="map-kop"><span class="ref">U2</span><span>Techniek</span></a><ul><li><a href="../techniek/index.html">Ondergrond</a></li><li><a href="../techniek/stappenplan.html">Stappenplan</a></li></ul></li><li class="map"><a href="../analyse/index.html" class="map-kop"><span class="ref">U3</span><span>Analyse</span></a><ul><li><a href="../analyse/index.html">Conflictregels</a></li><li><a href="../analyse/onderdelen.html">Onderdeeltypes</a></li><li><a href="../analyse/begeleidende-artikels.html">Begeleidende artikels</a></li></ul></li><li class="map open"><a href="index.html" class="map-kop"><span class="ref">U4</span><span>Alpha</span></a><ul><li><a href="index.html">Waarom een alpha</a></li><li><a href="scherm.html">Het scherm</a></li><li><a href="sjabloon.html" class="hier" aria-current="page">Sjabloon en MVC</a></li><li><a href="testen.html">Testen met het team</a></li></ul></li><li class="map"><a href="../leren/index.html" class="map-kop"><span class="ref">U5</span><span>Leren</span></a><ul><li><a href="../leren/index.html">Programming Advanced</a></li><li><a href="../leren/database.html">Databaseproject</a></li></ul></li><li class="map"><a href="../planning/index.html" class="map-kop"><span class="ref">U6</span><span>Planning</span></a><ul><li><a href="../planning/index.html">Tijdsinschatting</a></li><li><a href="../planning/takenlijst.html">Takenlijst</a></li></ul></li><li class="map"><a href="../bibliotheek/index.html" class="map-kop"><span class="ref">U7</span><span>Bibliotheek</span></a><ul><li><a href="../bibliotheek/index.html">Waar alles staat</a></li><li><a href="../bibliotheek/open.html">Wat nog open staat</a></li></ul></li></ul></nav>
+    <main class="inhoud">
+      
+      <nav class="kruim" aria-label="Kruimelpad"><a href="../index.html">Start</a> <span aria-hidden="true">/</span> <a href="index.html">Alpha</a> <span aria-hidden="true">/</span> <span>Sjabloon en MVC</span></nav>
+      <header class="paginakop">
+        <p class="silk"><span class="ref">U4</span>Alpha</p>
+        <h1>Sjabloon en MVC</h1>
+        <p class="lede">Hoe je het alpha-project opzet, welke bestanden erin komen en hoe MVC de C# aan de pagina koppelt.</p>
+      </header>
+      
+<h2>Het project maken in Visual Studio</h2>
+<div class="spec-wrap"><table class="spec "><thead><tr><th>Instelling</th><th>Waarde</th></tr></thead><tbody><tr><td>Sjabloon</td><td>ASP.NET Core Web App (Model-View-Controller)</td></tr><tr><td>Niet</td><td>Razor Pages (geen controllers) of Web API (geen views)</td></tr><tr><td>Projectnaam</td><td><code>Alternate.Bouwcontrole.Alpha</code></td></tr><tr><td>Locatie</td><td>een map naast je cursussolution, niet erin</td></tr><tr><td>Framework</td><td>.NET 10.0</td></tr><tr><td>Authentication type</td><td>None</td></tr><tr><td>Configure for HTTPS</td><td>mag aan blijven</td></tr><tr><td>Container support</td><td>uit</td></tr><tr><td>Top-level statements</td><td>laten zoals ze zijn</td></tr></tbody></table></div>
+<div class="blad"><span class="label">Valkuil</span><p>Maak het via <i>Create a new project</i> in het startscherm, zodat het een eigen solution krijgt. Niet via <i>Add → New Project</i> terwijl je cursussolution open staat.</p></div>
+
+<h2>Het lege sjabloon</h2>
+<p>Alle bestanden met de namespace, een lege klasse of interface en één regel die zegt waarvoor het bestand dient. De inhoud schrijf je zelf. Uitpakken in de map met het projectbestand; Visual Studio neemt de bestanden vanzelf op.</p>
+<div class="bestanden">Alternate.Bouwcontrole.Alpha
+├── GlobalUsings.cs               de usings voor alle .cs-bestanden
+├── Controllers/
+│   └── BouwcontroleController.cs ontvangt elke scan
+├── Models/
+│   ├── Ernst.cs                  hoe zwaar een bevinding weegt
+│   └── Onderdeel.cs              één artikel uit de lijst
+├── Services/
+│   ├── IControleService.cs       het contract voor de controles
+│   ├── ControleService.cs        de nagebootste controles
+│   ├── IOnderdelenService.cs     het contract om op te zoeken
+│   └── OnderdelenService.cs      de verzonnen artikels
+├── ViewModels/
+│   ├── BouwcontroleViewModel.cs  alles wat het scherm nodig heeft
+│   └── RegelViewModel.cs         één gescande regel
+└── Views/
+    └── Bouwcontrole/
+        └── Index.cshtml          het ene scherm</div>
+
+<h3>Wat nog buiten de bestanden moet gebeuren</h3>
+<ol class="stappen">
+  <li><code>Views/_ViewImports.cshtml</code>: de ViewModels bekendmaken, voor je de eerste keer bouwt.</li>
+  <li><code>Program.cs</code>: de twee services registreren en de startroute naar Bouwcontrole zetten.</li>
+  <li><code>Views/Shared/_Layout.cshtml</code>: de navigatiebalk en de footer weghalen.</li>
+  <li><code>wwwroot/css/site.css</code>: de opmaak uit de brainstorm.</li>
+</ol>
+<h3>Goed om te weten</h3>
+<ul class="punten">
+  <li><code>GlobalUsings.cs</code> werkt alleen voor .cs-bestanden. Views halen hun usings uit <code>_ViewImports.cshtml</code>.</li>
+  <li>Laat <code>HomeController</code> en <code>ErrorViewModel</code> uit het sjabloon staan: de foutpagina gebruikt ze.</li>
+</ul>
+
+<h2>Hoe de C# aan de pagina hangt</h2>
+<p>In MVC is er geen bestand achter elke pagina. De koppeling loopt via de controller en vaste namen.</p>
+<ol class="stappen">
+  <li>Het adres <code>/Bouwcontrole</code> komt via de route bij <code>BouwcontroleController</code> en de actie Index.</li>
+  <li>De controller vult een ViewModel en geeft het mee aan de view.</li>
+  <li>MVC zoekt de view op naam: de map heet zoals de controller zonder "Controller", het bestand zoals de actie.</li>
+  <li>De view zegt welk ViewModel ze verwacht, en toont het.</li>
+  <li>Het formulier stuurt de scan terug naar dezelfde actie. Model binding vult het ViewModel opnieuw.</li>
+</ol>
+<p class="noot">Een apart C#-bestand achter elke pagina bestaat alleen bij Razor Pages, het andere sjabloon. Hier is de controller dat achterliggende stuk.</p>
+
+<h2>Waar je de code vindt</h2>
+<p>De uitgewerkte versie en het lege sjabloon staan in de brainstorm, de bestanden ook in <i>Bouwcontrole Alpha sjabloon V1.zip</i>. Deze site toont bewust geen code.</p>
+
+      <p class="bron"><span>Bron</span> Brainstorm Bouwcontrole: Leeg sjabloon voor de Razor-alpha · LEESMIJ in het sjabloon</p>
+      <nav class="buren" aria-label="Verder lezen"><a class="buur terug" href="scherm.html"><span class="buur-label">Vorige · U4 Alpha</span><span class="buur-titel">Het scherm</span></a><a class="buur verder" href="testen.html"><span class="buur-label">Volgende · U4 Alpha</span><span class="buur-titel">Testen met het team</span></a></nav>
+    </main>
+  </div>
+  <footer class="voet"><span>Bouwcontrole · leerproject van Jeroen bij Alternate</span><span>Opgesteld op 13 oktober 2026 uit de projectdocs, de repo en de brainstorm. Waar de site en een document verschillen, wint het document.</span></footer>
+</div>
+<script src="../assets/site.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+@model BouwcontroleViewModel
+
+<div class="scherm">
+    <section class="bron">
+        <h2>Gegevensbron</h2>
+    </section>
+
+    <section class="scanzone">
+        <form asp-action="Index" method="post">
+            @foreach (var krakenId in Model.Gescand)
+            {
+                <input type="hidden" name="Gescand" value="@krakenId" />
+            }
+            <label asp-for="Scan">Scanzone</label>
+            <input asp-for="Scan" autofocus autocomplete="off" />
+        </form>
+        @if (Model.ScanMelding != null)
+        {
+            <p class="scanmelding">@Model.ScanMelding</p>
+        }
+    </section>
+
+    <section class="onderdelen">
+        <h2>Gescande onderdelen</h2>
+        <ul>
+            @foreach (var regel in Model.Regels)
+            {
+                <li class="regel @CssKlasse(regel.Ernst)">
+                    <span class="veld">@regel.Artikelcode</span>
+                    <span class="veld">@regel.KrakenId</span>
+                    <span class="veld">@regel.Naam</span>
+                </li>
+            }
+        </ul>
+    </section>
+
+    <section class="conflicten">
+        <h2>Gevonden bouwconflicten</h2>
+        <div class="vakken">
+            <div class="vak">
+                <h3>Tussen onderdelen</h3>
+                <ul>
+                    @foreach (var melding in Model.ConflictenTussenOnderdelen)
+                    {
+                        <li>@melding</li>
+                    }
+                </ul>
+            </div>
+            <div class="vak nieuw">
+                <h3>Ontbrekend artikel</h3>
+                <ul>
+                    @foreach (var melding in Model.OntbrekendeArtikels)
+                    {
+                        <li>@melding</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+
+@functions {
+    // De kleur is een beslissing van het scherm: ernst in, CSS-klasse uit
+    string CssKlasse(Ernst ernst) => ernst switch
+    {
+        Ernst.Opmerking => "opmerking",
+        Ernst.NietInOrde => "nok",
+        _ => "ok"
+    };
+}

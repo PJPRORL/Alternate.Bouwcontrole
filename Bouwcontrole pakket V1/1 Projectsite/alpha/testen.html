@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Testen met het team · Bouwcontrole</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+
+</head>
+<body>
+<div class="site">
+  <header class="balk">
+    <a class="merk" href="../index.html" aria-label="Bouwcontrole, naar de start">
+      <svg class="chip" viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="2"/><path d="M11 3v4M16 3v4M21 3v4M11 25v4M16 25v4M21 25v4M3 11h4M3 16h4M3 21h4M25 11h4M25 16h4M25 21h4"/><circle cx="11" cy="11" r="1.6"/></svg>
+      <span class="merk-naam">Bouwcontrole</span>
+      <span class="merk-sub">projectsite</span>
+    </a>
+    <span class="rev">REV 13·10·2026</span>
+    <button class="menu-knop" type="button" id="menu-knop" aria-expanded="false" aria-controls="zijbalk">Mappen</button>
+  </header>
+  <div class="raster">
+    <nav class="zijbalk" id="zijbalk" aria-label="Mappen"><ul class="boom"><li class="map"><a href="../index.html"><span class="ref">MB</span><span>Start</span></a></li><li class="map"><a href="../project/index.html" class="map-kop"><span class="ref">U1</span><span>Project</span></a><ul><li><a href="../project/index.html">Wat Bouwcontrole is</a></li><li><a href="../project/tijdlijn.html">Tijdlijn</a></li><li><a href="../project/afspraken.html">Afspraken</a></li></ul></li><li class="map"><a href="../techniek/index.html" class="map-kop"><span class="ref">U2</span><span>Techniek</span></a><ul><li><a href="../techniek/index.html">Ondergrond</a></li><li><a href="../techniek/stappenplan.html">Stappenplan</a></li></ul></li><li class="map"><a href="../analyse/index.html" class="map-kop"><span class="ref">U3</span><span>Analyse</span></a><ul><li><a href="../analyse/index.html">Conflictregels</a></li><li><a href="../analyse/onderdelen.html">Onderdeeltypes</a></li><li><a href="../analyse/begeleidende-artikels.html">Begeleidende artikels</a></li></ul></li><li class="map open"><a href="index.html" class="map-kop"><span class="ref">U4</span><span>Alpha</span></a><ul><li><a href="index.html">Waarom een alpha</a></li><li><a href="scherm.html">Het scherm</a></li><li><a href="sjabloon.html">Sjabloon en MVC</a></li><li><a href="testen.html" class="hier" aria-current="page">Testen met het team</a></li></ul></li><li class="map"><a href="../leren/index.html" class="map-kop"><span class="ref">U5</span><span>Leren</span></a><ul><li><a href="../leren/index.html">Programming Advanced</a></li><li><a href="../leren/database.html">Databaseproject</a></li></ul></li><li class="map"><a href="../planning/index.html" class="map-kop"><span class="ref">U6</span><span>Planning</span></a><ul><li><a href="../planning/index.html">Tijdsinschatting</a></li><li><a href="../planning/takenlijst.html">Takenlijst</a></li></ul></li><li class="map"><a href="../bibliotheek/index.html" class="map-kop"><span class="ref">U7</span><span>Bibliotheek</span></a><ul><li><a href="../bibliotheek/index.html">Waar alles staat</a></li><li><a href="../bibliotheek/open.html">Wat nog open staat</a></li></ul></li></ul></nav>
+    <main class="inhoud">
+      
+      <nav class="kruim" aria-label="Kruimelpad"><a href="../index.html">Start</a> <span aria-hidden="true">/</span> <a href="index.html">Alpha</a> <span aria-hidden="true">/</span> <span>Testen met het team</span></nav>
+      <header class="paginakop">
+        <p class="silk"><span class="ref">U4</span>Alpha</p>
+        <h1>Testen met het team</h1>
+        <p class="lede">Wat je met de alpha op de werkvloer test, en wat je het team vraagt.</p>
+      </header>
+      
+<h2>Vijf scenario's</h2>
+<p>Loop ze door met je team, met de echte scanner. De meeste USB-scanners typen de code als een toetsenbord en sluiten af met Enter.</p>
+<div class="spec-wrap"><table class="spec "><thead><tr><th class=num></th><th>Scenario</th><th>Verwacht</th></tr></thead><tbody><tr><td class=num>1</td><td>Losse NZXT-fans met een aparte controller</td><td><span class="regel-ernst"><i class="led"></i>geen melding</span></td></tr><tr><td class=num>2</td><td>Losse NZXT-fans met een triple pack van hetzelfde type</td><td><span class="regel-ernst"><i class="led"></i>geen melding</span></td></tr><tr><td class=num>3</td><td>Alleen losse NZXT-fans</td><td><span class="regel-ernst"><i class="led nok"></i>wel een melding</span></td></tr><tr><td class=num>4</td><td>Losse NZXT-fans met een triple pack van een ander type</td><td>dat beslist de werkvloer</td></tr><tr><td class=num>5</td><td>Een code die niet bestaat</td><td>een melding bij het scanveld</td></tr></tbody></table></div>
+<p>Begin bij het bouwen met scenario 3. Wat scenario 4 moet geven, weet het team beter dan de software.</p>
+
+<h2>Vragen voor het team</h2>
+<ul class="vragen">
+  <li><span class="code">T1</span><div>Welke andere artikels hebben een verplichte partner die niet in de verpakking zit?</div></li>
+  <li><span class="code">T2</span><div>Hoe herkent het team vandaag "hetzelfde type": op naam, op reeks, op iets anders?</div></li>
+  <li><span class="code">T3</span><div>Stuurt een controller van een ander type of een andere reeks de losse fans ook aan?</div></li>
+  <li><span class="code">T4</span><div>Hoeveel fans kan één controller aan, en moet Bouwcontrole dat tellen?</div></li>
+  <li><span class="code">T5</span><div>Melding of blokkade: mag iemand doorgaan zonder het ontbrekende artikel?</div></li>
+  <li><span class="code">T6</span><div>Blijft de artikelcode op het scherm naast het Kraken-Id?</div></li>
+  <li><span class="code">T7</span><div>Komt een order binnen door stuk per stuk te scannen, of uit een bestand of ordernummer?</div></li>
+</ul>
+<p>Noteer de antwoorden in de brainstorm. Daar staan dezelfde vragen als lijst om af te vinken.</p>
+
+<h2>Klaar wanneer</h2>
+<p>Scenario 1 tot 3 geven op het scherm wat je verwacht, en je team heeft de vijf scenario's doorlopen.</p>
+
+      <p class="bron"><span>Bron</span> Brainstorm Bouwcontrole: Wat de alpha moet tonen, Open vragen voor het team</p>
+      <nav class="buren" aria-label="Verder lezen"><a class="buur terug" href="sjabloon.html"><span class="buur-label">Vorige · U4 Alpha</span><span class="buur-titel">Sjabloon en MVC</span></a><a class="buur verder" href="../leren/index.html"><span class="buur-label">Volgende · U5 Leren</span><span class="buur-titel">Programming Advanced</span></a></nav>
+    </main>
+  </div>
+  <footer class="voet"><span>Bouwcontrole · leerproject van Jeroen bij Alternate</span><span>Opgesteld op 13 oktober 2026 uit de projectdocs, de repo en de brainstorm. Waar de site en een document verschillen, wint het document.</span></footer>
+</div>
+<script src="../assets/site.js"></script>
+
+</body>
+</html>

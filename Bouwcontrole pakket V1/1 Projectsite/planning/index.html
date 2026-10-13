@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tijdsinschatting · Bouwcontrole</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+
+</head>
+<body>
+<div class="site">
+  <header class="balk">
+    <a class="merk" href="../index.html" aria-label="Bouwcontrole, naar de start">
+      <svg class="chip" viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="2"/><path d="M11 3v4M16 3v4M21 3v4M11 25v4M16 25v4M21 25v4M3 11h4M3 16h4M3 21h4M25 11h4M25 16h4M25 21h4"/><circle cx="11" cy="11" r="1.6"/></svg>
+      <span class="merk-naam">Bouwcontrole</span>
+      <span class="merk-sub">projectsite</span>
+    </a>
+    <span class="rev">REV 13·10·2026</span>
+    <button class="menu-knop" type="button" id="menu-knop" aria-expanded="false" aria-controls="zijbalk">Mappen</button>
+  </header>
+  <div class="raster">
+    <nav class="zijbalk" id="zijbalk" aria-label="Mappen"><ul class="boom"><li class="map"><a href="../index.html"><span class="ref">MB</span><span>Start</span></a></li><li class="map"><a href="../project/index.html" class="map-kop"><span class="ref">U1</span><span>Project</span></a><ul><li><a href="../project/index.html">Wat Bouwcontrole is</a></li><li><a href="../project/tijdlijn.html">Tijdlijn</a></li><li><a href="../project/afspraken.html">Afspraken</a></li></ul></li><li class="map"><a href="../techniek/index.html" class="map-kop"><span class="ref">U2</span><span>Techniek</span></a><ul><li><a href="../techniek/index.html">Ondergrond</a></li><li><a href="../techniek/stappenplan.html">Stappenplan</a></li></ul></li><li class="map"><a href="../analyse/index.html" class="map-kop"><span class="ref">U3</span><span>Analyse</span></a><ul><li><a href="../analyse/index.html">Conflictregels</a></li><li><a href="../analyse/onderdelen.html">Onderdeeltypes</a></li><li><a href="../analyse/begeleidende-artikels.html">Begeleidende artikels</a></li></ul></li><li class="map"><a href="../alpha/index.html" class="map-kop"><span class="ref">U4</span><span>Alpha</span></a><ul><li><a href="../alpha/index.html">Waarom een alpha</a></li><li><a href="../alpha/scherm.html">Het scherm</a></li><li><a href="../alpha/sjabloon.html">Sjabloon en MVC</a></li><li><a href="../alpha/testen.html">Testen met het team</a></li></ul></li><li class="map"><a href="../leren/index.html" class="map-kop"><span class="ref">U5</span><span>Leren</span></a><ul><li><a href="../leren/index.html">Programming Advanced</a></li><li><a href="../leren/database.html">Databaseproject</a></li></ul></li><li class="map open"><a href="index.html" class="map-kop"><span class="ref">U6</span><span>Planning</span></a><ul><li><a href="index.html" class="hier" aria-current="page">Tijdsinschatting</a></li><li><a href="takenlijst.html">Takenlijst</a></li></ul></li><li class="map"><a href="../bibliotheek/index.html" class="map-kop"><span class="ref">U7</span><span>Bibliotheek</span></a><ul><li><a href="../bibliotheek/index.html">Waar alles staat</a></li><li><a href="../bibliotheek/open.html">Wat nog open staat</a></li></ul></li></ul></nav>
+    <main class="inhoud">
+      
+      <nav class="kruim" aria-label="Kruimelpad"><a href="../index.html">Start</a> <span aria-hidden="true">/</span> <a href="index.html">Planning</a></nav>
+      <header class="paginakop">
+        <p class="silk"><span class="ref">U6</span>Planning</p>
+        <h1>Tijdsinschatting</h1>
+        <p class="lede">Hoe lang het duurt aan 6 uur per week, gebaseerd op de cursus en de lesdata.</p>
+      </header>
+      
+<h2>De mijlpalen</h2>
+<div class="mijlpalen">
+  <div class="mijlpaal"><span class="label">Werkende alpha</span><span class="wanneer">eind oktober 2026</span><span class="uitleg">9 tot 12 uur, dus twee weken.</span></div>
+  <div class="mijlpaal"><span class="label">Demo, einde fase 11</span><span class="wanneer">februari 2027</span><span class="uitleg">56 tot 81 uur. Zonder examens tussen half en eind januari.</span></div>
+  <div class="mijlpaal"><span class="label">Project af, einde fase 15</span><span class="wanneer">eind mei 2027</span><span class="uitleg">30 tot 46 uur extra, kort na de laatste les.</span></div>
+</div>
+<p class="noot">Met de alpha eerst schuift de demo twee weken op. Elke week die je in de examenperiode niet aan het project werkt, schuift ze nog een week op.</p>
+
+<h2>Waar de rem zit</h2>
+<div class="twee"><div class="blad"><span class="label">Deel 1</span><p><b>je eigen tijd remt, niet de school.</b> Het project staat volgens de repo op fase 1, de les op 04. Je loopt dus drie fases achter. Tot begin januari heb je zo&#x27;n 70 uur, en deel 1 vraagt er 56 tot 81. Tussen eind november en de jaarwisseling haal je de lessen in. Enkel aan de ondergrens kan les 09 je daarna nog even laten wachten.</p></div><div class="blad"><span class="label">Deel 2</span><p><b>de school remt, niet jij.</b> 30 tot 46 uur, gespreid over februari tot mei, laat ruimte over. Die kan naar het databaseproject, de scraper of de open vragen uit het ontwerp.</p></div></div>
+
+<h2>Uren per fase</h2>
+<div class="uren" role="img" aria-label="Geschatte uren per fase, van minimum tot maximum"><div class="uur"><span>0 · Opruimen</span><span class="baan"><i class="max" style="width:13.33%"></i><i class="min" style="width:6.67%"></i></span><span class="waarde">1–2 u</span></div><div class="uur"><span>1 · Het project draait</span><span class="baan"><i class="max" style="width:13.33%"></i><i class="min" style="width:6.67%"></i></span><span class="waarde">1–2 u</span></div><div class="uur"><span>2 · Analyse</span><span class="baan"><i class="max" style="width:33.33%"></i><i class="min" style="width:20.00%"></i></span><span class="waarde">3–5 u</span></div><div class="uur"><span>3 · Modellen en CRUD</span><span class="baan"><i class="max" style="width:40.00%"></i><i class="min" style="width:26.67%"></i></span><span class="waarde">4–6 u</span></div><div class="uur"><span>4 · Repository</span><span class="baan"><i class="max" style="width:33.33%"></i><i class="min" style="width:26.67%"></i></span><span class="waarde">4–5 u</span></div><div class="uur"><span>5 · Docker en database</span><span class="baan"><i class="max" style="width:40.00%"></i><i class="min" style="width:26.67%"></i></span><span class="waarde">4–6 u</span></div><div class="uur"><span>6 · Async</span><span class="baan"><i class="max" style="width:40.00%"></i><i class="min" style="width:26.67%"></i></span><span class="waarde">4–6 u</span></div><div class="uur"><span>7 · Hiërarchie en regels</span><span class="baan"><i class="max" style="width:100.00%"></i><i class="min" style="width:66.67%"></i></span><span class="waarde">10–15 u</span></div><div class="uur"><span>8 · Unit of Work</span><span class="baan"><i class="max" style="width:40.00%"></i><i class="min" style="width:33.33%"></i></span><span class="waarde">5–6 u</span></div><div class="uur"><span>9 · Gerelateerde data</span><span class="baan"><i class="max" style="width:33.33%"></i><i class="min" style="width:26.67%"></i></span><span class="waarde">4–5 u</span></div><div class="uur"><span>10 · DTO&#x27;s</span><span class="baan"><i class="max" style="width:53.33%"></i><i class="min" style="width:40.00%"></i></span><span class="waarde">6–8 u</span></div><div class="uur"><span>11 · Engine en demo</span><span class="baan"><i class="max" style="width:100.00%"></i><i class="min" style="width:66.67%"></i></span><span class="waarde">10–15 u</span></div><div class="uur alpha"><span>Alpha</span><span class="baan"><i class="max" style="width:80.00%"></i><i class="min" style="width:60.00%"></i></span><span class="waarde">9–12 u</span></div><div class="uur"><span>12 · Tests</span><span class="baan"><i class="max" style="width:80.00%"></i><i class="min" style="width:53.33%"></i></span><span class="waarde">8–12 u</span></div><div class="uur"><span>13 · Identity</span><span class="baan"><i class="max" style="width:80.00%"></i><i class="min" style="width:53.33%"></i></span><span class="waarde">8–12 u</span></div><div class="uur"><span>14 · Het scherm</span><span class="baan"><i class="max" style="width:80.00%"></i><i class="min" style="width:53.33%"></i></span><span class="waarde">8–12 u</span></div><div class="uur"><span>15 · Rechten</span><span class="baan"><i class="max" style="width:66.67%"></i><i class="min" style="width:40.00%"></i></span><span class="waarde">6–10 u</span></div></div>
+<div class="as" aria-hidden="true"><span></span><span class="schaal"><span style="left:0">0</span><span style="left:33.333%">5</span><span style="left:66.667%">10</span><span style="left:100%">15 u</span></span><span></span></div>
+<p class="noot">Het volle deel is de ondergrens, het lichte loopt tot de bovengrens. Deel 1 samen: 56 tot 81 uur. Deel 2: 30 tot 46 uur. Alles samen 86 tot 127 uur, met de alpha 95 tot 139.</p>
+
+<h2>Hoe gerekend</h2>
+<ul class="punten"><li>Per fase is de samengestelde oefening (●●●) van dat hoofdstuk de maat. Die past een hele les toe op een bestaande API, en dat is wat je per fase met Bouwcontrole doet.</li><li>Voor je eigen domein maal 2 tot 3: meer onderdeeltypes, geen vaste startgegevens, eigen beslissingen en geen nakijkscript. Fase 7 maal 4 tot 6: alle types, de conflictregels, overerving die in geen cursus staat, en de seeding.</li><li>Fases zonder oefening (0, 1, 2, 11 en heel deel 2) zijn een eigen schatting.</li><li>Gerekend met 6 uur per week. De les lezen en de oefeningen maken tellen niet mee: die doe je voor school. Enkel bij de alpha telt het lezen mee, omdat je daar vooruitloopt.</li><li>Vakanties zijn niet apart gerekend. De datums zijn een schatting, geen belofte.</li></ul>
+<div class="spec-wrap"><table class="spec "><thead><tr><th>Fase</th><th>Les</th><th>Maat (●●●)</th><th>Factor</th><th>Schatting</th></tr></thead><tbody><tr><td>0 · Opruimen</td><td>—</td><td>—</td><td>eigen schatting</td><td>1–2 u</td></tr><tr><td>1 · Het project draait</td><td>PA 01</td><td>—</td><td>eigen schatting</td><td>1–2 u</td></tr><tr><td>2 · Analyse</td><td>—</td><td>—</td><td>eigen schatting</td><td>3–5 u</td></tr><tr><td>3 · Modellen en CRUD</td><td>PA 02</td><td>02_06 · ±2 u</td><td>×2–3</td><td>4–6 u</td></tr><tr><td>4 · Repository, DI, logging</td><td>PA 03</td><td>03_06 · ±2 u</td><td>×2–2,5</td><td>4–5 u</td></tr><tr><td>5 · Docker en database</td><td>PA 04</td><td>04_06 · ±2 u</td><td>×2–3</td><td>4–6 u</td></tr><tr><td>6 · Echte repository en async</td><td>PA 05</td><td>05_06 · ±2 u</td><td>×2–3</td><td>4–6 u</td></tr><tr><td>7 · Hiërarchie, regels, seeding</td><td>PA 06</td><td>06_06 · ±2,5 u</td><td>×4–6</td><td>10–15 u</td></tr><tr><td>8 · Generics en Unit of Work</td><td>PA 07</td><td>07_06 · ±2,5 u</td><td>×2–2,5</td><td>5–6 u</td></tr><tr><td>9 · Gerelateerde data</td><td>PA 08</td><td>08_06 · ±2,5 u</td><td>×1,5–2</td><td>4–5 u</td></tr><tr><td>10 · DTO&#x27;s en Mapster</td><td>PA 09</td><td>09_06 · ±3 u</td><td>×2–2,5</td><td>6–8 u</td></tr><tr><td>11 · Engine en demo</td><td>—</td><td>—</td><td>eigen schatting</td><td>10–15 u</td></tr><tr><td><b>Deel 1 samen</b></td><td></td><td></td><td></td><td><b>56–81 u</b></td></tr><tr><td>Alpha</td><td>ND 09–10</td><td>—</td><td>eigen schatting</td><td>9–12 u</td></tr><tr><td>12 · Tests</td><td>ND 08</td><td>—</td><td>eigen schatting</td><td>8–12 u</td></tr><tr><td>13 · Identity</td><td>ND 06–07</td><td>—</td><td>eigen schatting</td><td>8–12 u</td></tr><tr><td>14 · Het scherm</td><td>ND 09–10</td><td>—</td><td>eigen schatting</td><td>8–12 u</td></tr><tr><td>15 · Keuzelijsten en rechten</td><td>ND 11</td><td>—</td><td>eigen schatting</td><td>6–10 u</td></tr><tr><td><b>Deel 2 samen</b></td><td></td><td></td><td></td><td><b>30–46 u</b></td></tr><tr><td><b>Alles samen</b></td><td></td><td></td><td></td><td><b>86–127 u, met alpha 95–139 u</b></td></tr></tbody></table></div>
+<p class="noot">Afgerond op hele uren. PA is Programming Advanced, ND is .NET Development.</p>
+
+      <p class="bron"><span>Bron</span> claude/takenlijst-bouwcontrole.md, deel T</p>
+      <nav class="buren" aria-label="Verder lezen"><a class="buur terug" href="../leren/database.html"><span class="buur-label">Vorige · U5 Leren</span><span class="buur-titel">Databaseproject</span></a><a class="buur verder" href="takenlijst.html"><span class="buur-label">Volgende · U6 Planning</span><span class="buur-titel">Takenlijst</span></a></nav>
+    </main>
+  </div>
+  <footer class="voet"><span>Bouwcontrole · leerproject van Jeroen bij Alternate</span><span>Opgesteld op 13 oktober 2026 uit de projectdocs, de repo en de brainstorm. Waar de site en een document verschillen, wint het document.</span></footer>
+</div>
+<script src="../assets/site.js"></script>
+
+</body>
+</html>
