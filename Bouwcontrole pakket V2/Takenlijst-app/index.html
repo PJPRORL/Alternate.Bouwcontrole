@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Takenlijst Bouwcontrole V3</title>
+<link rel="stylesheet" href="stijl.css">
+</head>
+<body>
+<header class="kop">
+  <div class="kop-binnen">
+    <div>
+      <h1>Takenlijst Bouwcontrole</h1>
+      <p class="ondertitel" id="ondertitel"></p>
+    </div>
+    <div class="totaal">
+      <div class="totaal-getal"><span id="totaal-klaar">0</span> van <span id="totaal-alles">0</span></div>
+      <div class="balk"><div class="balk-vulling" id="totaal-balk"></div></div>
+    </div>
+  </div>
+  <nav class="secties" id="secties"></nav>
+</header>
+
+<main>
+  <p class="melding verborgen" id="opslag-melding">Je voortgang kan in deze browser niet bewaard worden. Vinkjes verdwijnen als je de pagina sluit. Gebruik de knop Back-up opslaan.</p>
+
+  <section class="balkje">
+    <label class="schakel"><input type="checkbox" id="verberg-klaar"> Verberg afgevinkte taken</label>
+    <div class="knoppen">
+      <button type="button" id="backup-opslaan">Back-up opslaan</button>
+      <button type="button" id="backup-terug">Back-up terugzetten</button>
+      <input type="file" id="backup-bestand" accept="application/json,.json" hidden>
+      <button type="button" id="alles-wissen" class="stil">Alles wissen</button>
+    </div>
+  </section>
+
+  <details class="tijd" id="tijd" open>
+    <summary>T · Tijdsinschatting</summary>
+    <div class="tijd-binnen" id="tijd-inhoud"></div>
+  </details>
+
+  <div id="taken"></div>
+
+  <footer class="voet">
+    <p id="regel"></p>
+    <p id="bronnen"></p>
+  </footer>
+</main>
+
+<script src="takenlijst.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
